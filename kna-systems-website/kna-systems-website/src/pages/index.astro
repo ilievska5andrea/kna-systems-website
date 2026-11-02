@@ -36,6 +36,110 @@ const people = [
 <section class="section" id="uslugi"><div class="wrap"><div class="section-head"><span class="eyebrow">Што правиме</span><h2>Технологијата треба да ви ја олесни работата.</h2><p>Не мора да го менувате целиот начин на работа. Почнуваме од задачите што ви одземаат најмногу време.</p></div><div class="grid3">{services.map(item => <article class="service"><span class="num">{item.number} / УСЛУГА</span><h3>{item.title}</h3><p>{item.desc}</p><small>{item.tags}</small></article>)}</div></div></section>
 <section class="section soft" id="resenija"><div class="wrap"><div class="section-head"><span class="eyebrow">Решенија и примери</span><h2>Од секојдневен проблем до поедноставен процес.</h2><p>Неколку примери што покажуваат како може да изгледа автоматизацијата во пракса.</p></div><div class="grid3">{solutions.map(item => <article class="solution"><div class="solution-top" aria-hidden="true"></div><div class="solution-body"><span class="pill">{item.label}</span><h3>{item.title}</h3><p>{item.desc}</p>{item.href && <a href={item.href} class="case-link">Погледнете го проектот →</a>}</div></article>)}</div></div></section>
 <section class="section" id="za-nas"><div class="wrap about"><div class="about-copy"><span class="eyebrow">За нас</span><h2>Три перспективи. Една заедничка цел.</h2><p>KNA Systems е семејна иницијатива на Кристина, Ненад и Андреа. Ги спојуваме технологијата, организацијата и маркетингот за да создадеме практични решенија за бизниси.</p><p>Веруваме во јасен разговор, реални очекувања и решенија што одговараат на вистинските потреби.</p></div><div class="founders">{people.map(person => <article class="person"><div class="avatar" aria-hidden="true">{person.initials}</div><div><h3>{person.name}</h3><strong>{person.role}</strong><p>{person.desc}</p></div></article>)}</div></div></section>
-<section class="contact" id="kontakt"><div class="wrap contact-inner"><div><span class="eyebrow">Да разговараме</span><h2>Кој дел од работата ви одзема најмногу време?</h2><p>Кажете ни што сакате да поедноставите. Ќе разговараме за можните решенија и следните чекори.</p></div><a class="btn" href="mailto:REPLACE_WITH_YOUR_EMAIL?subject=KNA%20Systems%20-%20Барање%20за%20соработка">Контактирајте нè ↗</a></div></section>
+
+<section class="contact" id="kontakt">
+  <div class="wrap contact-inner">
+    <div>
+      <span class="eyebrow">Да разговараме</span>
+      <h2>Кој дел од работата ви одзема најмногу време?</h2>
+      <p>
+        Кажете ни што сакате да поедноставите.
+        Ќе разговараме за можните решенија и следните чекори.
+      </p>
+    </div>
+
+    <form
+      action="https://formsubmit.co/ilievska5andrea@gmail.com"
+      method="POST"
+      class="kna-contact-form"
+    >
+      <input type="hidden" name="_subject" value="Ново барање од KNA Systems" />
+      <input type="hidden" name="_captcha" value="true" />
+
+      <label for="contact-name">Име и презиме *</label>
+      <input id="contact-name" type="text" name="name"
+        placeholder="Вашето име" required />
+
+      <label for="contact-email">Е-пошта *</label>
+      <input id="contact-email" type="email" name="email"
+        placeholder="vas@email.com" required />
+
+      <label for="contact-company">Компанија</label>
+      <input id="contact-company" type="text" name="company"
+        placeholder="Име на компанијата" />
+
+      <label for="contact-message">Како можеме да ви помогнеме? *</label>
+      <textarea id="contact-message" name="message"
+        placeholder="Опишете накратко што сакате да автоматизирате..."
+        rows="4" required></textarea>
+
+      <button type="submit">Испратете барање ↗</button>
+    </form>
+  </div>
+</section>
+
+<style>
+  .kna-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #ffffff;
+    padding: 28px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 480px;
+    box-sizing: border-box;
+    color: #142e3c;
+    box-shadow: 0 8px 30px rgba(0,0,0,.08);
+  }
+
+  .kna-contact-form label {
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  .kna-contact-form input,
+  .kna-contact-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cbd5d8;
+    border-radius: 8px;
+    font: inherit;
+    font-size: 15px;
+    box-sizing: border-box;
+    background: #ffffff;
+    color: #142e3c;
+  }
+
+  .kna-contact-form input:focus,
+  .kna-contact-form textarea:focus {
+    outline: 2px solid #24b8ae;
+    outline-offset: 1px;
+  }
+
+  .kna-contact-form button {
+    background: #24b8ae;
+    color: #142e3c;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 8px;
+  }
+
+  .kna-contact-form button:hover {
+    background: #1ca69d;
+  }
+
+  @media (max-width: 768px) {
+    .kna-contact-form {
+      max-width: 100%;
+      padding: 20px;
+    }
+  }
+</style>
+
 </main><footer class="footer"><div class="wrap foot"><span><b>KNA Systems</b> · Business Automation & AI Solutions</span><span>© {new Date().getFullYear()} KNA Systems</span></div></footer>
 </body></html>
